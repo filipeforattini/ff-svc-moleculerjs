@@ -8,8 +8,8 @@ services:
       - .:/app
     working_dir: /app
     restart: unless-stopped
-    entrypoint: node
-    command: index.js
+    entrypoint: npm
+    command: start
     depends_on:
       - etcd
       - nats
