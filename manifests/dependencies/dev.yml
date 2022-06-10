@@ -1,0 +1,10 @@
+#@data/values
+---
+redis:
+  enabled: true
+
+rabbitmq:
+  enabled: true  
+  values:
+    persistence:
+      enable: false

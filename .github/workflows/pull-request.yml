@@ -1,0 +1,16 @@
+name: pull-request
+on: ['pull_request']
+
+jobs:
+
+  Service:
+    uses: filipeforattini/ff-iac-github-actions/.github/workflows/pull-request.yml@main
+    with:
+      debug: true
+    secrets: inherit
+
+  Outputs:
+    runs-on: ubuntu-latest
+    needs: Service
+    steps:
+      - run: echo PipelineSetup = ${{ needs.Service.outputs.PipelineConfig }}
