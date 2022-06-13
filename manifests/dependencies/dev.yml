@@ -3,6 +3,12 @@
 redis:
   enabled: true
 
+nats:
+  enabled: true
+
+etcd:
+  enabled: true
+
 rabbitmq:
   enabled: true  
   values:
