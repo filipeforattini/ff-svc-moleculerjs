@@ -10,7 +10,7 @@ etcd:
   enabled: true
 
 rabbitmq:
-  enabled: true  
+  enabled: false  
   values:
     persistence:
       enabled: false
