@@ -1,5 +1,8 @@
 #@data/values
 ---
+mysql:
+  enabled: true
+
 redis:
   enabled: true
 
