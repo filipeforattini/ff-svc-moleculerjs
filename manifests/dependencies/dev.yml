@@ -1,13 +1,13 @@
 #@data/values
 ---
 redis:
-  enabled: false
+  enabled: true
 
 nats:
-  enabled: false
+  enabled: true
 
 etcd:
-  enabled: false
+  enabled: true
 
 rabbitmq:
   enabled: false  
