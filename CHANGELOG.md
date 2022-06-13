@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.0.2...v1.0.3) (2022-06-13)
+
+
+### Bug Fixes
+
+* organized dependencies for dev environment ([eb7ccdf](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/eb7ccdf0f5a571e641ab616dc371ff7d44a37d5c))
+
 ## [1.0.2](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.0.1...v1.0.2) (2022-06-10)
 
 
