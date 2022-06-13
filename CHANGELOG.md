@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.0.3...v1.0.4) (2022-06-13)
+
+
+### Bug Fixes
+
+* removed rabbitmq from dependencies ([4a85cf0](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/4a85cf0ff6797954ab49baa443d549ac57175d01))
+
 ## [1.0.3](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.0.2...v1.0.3) (2022-06-13)
 
 
