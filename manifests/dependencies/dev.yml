@@ -1,18 +1,18 @@
 #@data/values
 ---
 mysql:
-  enabled: true
+  enabled: false
   values:
     primary:
       persistence:
-        enabled: false
+        size: 1Gi
 
 postgres:
-  enabled: true
+  enabled: false
   values:
     primary:
       persistence:
-        enabled: false
+        size: 1Gi
 
 redis:
   enabled: true
