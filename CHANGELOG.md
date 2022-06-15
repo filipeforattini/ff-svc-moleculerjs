@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.0.7...v1.1.0) (2022-06-15)
+
+
+### Features
+
+* meaningful service experience ([f52c88d](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/f52c88deec0c3df7e46661859c15f199ebb8885d))
+
 ## [1.0.7](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.0.6...v1.0.7) (2022-06-15)
 
 
