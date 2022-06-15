@@ -1,5 +1,11 @@
 #@data/values
 ---
+postgres:
+  enabled: true
+
+mysql:
+  enabled: true
+
 redis:
   enabled: true
 
@@ -8,9 +14,3 @@ nats:
 
 etcd:
   enabled: true
-
-rabbitmq:
-  enabled: true  
-  values:
-    persistence:
-      enabled: false
