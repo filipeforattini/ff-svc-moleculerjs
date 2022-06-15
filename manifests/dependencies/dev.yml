@@ -1,10 +1,18 @@
 #@data/values
 ---
-postgres:
-  enabled: true
-
 mysql:
   enabled: true
+  values:
+    primary:
+      persistence:
+        enabled: false
+
+postgres:
+  enabled: true
+  values:
+    primary:
+      persistence:
+        enabled: false
 
 redis:
   enabled: true
