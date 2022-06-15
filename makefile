@@ -7,4 +7,4 @@ down:
 	docker-compose down
 
 logs:
-	docker-compose logs -f app
+	docker-compose logs --tail 100 -f app

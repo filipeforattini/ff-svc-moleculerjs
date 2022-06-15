@@ -20,10 +20,19 @@
   "dependencies": {
     "@moleculer/channels": "^0.1.2",
     "amqplib": "^0.10.0",
+    "cron": "^2.0.0",
+    "dayjs": "^1.11.3",
     "etcd3": "^1.1.0",
-    "ioredis": "^4.28.5",
+    "fakerator": "^0.3.5",
+    "ioredis": "^4.27.9",
     "moleculer": "^0.14.21",
+    "moleculer-db": "^0.8.18",
+    "moleculer-db-adapter-sequelize": "^0.2.14",
+    "mysql2": "^2.3.3",
     "nats": "^2.7.1",
-    "redlock": "^4.2.0"
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "redlock": "^4.2.0",
+    "sequelize": "^6.20.1"
   }
 }

@@ -14,6 +14,7 @@ const {
 } = process.env;
 
 module.exports = {
+  hotReload: true,
   cacher: REDIS_CONNECTION_STRING || MOLECULER_CACHER,
   transporter: NATS_CONNECTION_STRING || MOLECULER_TRANSPORTER,
   registry: {
