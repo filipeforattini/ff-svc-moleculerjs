@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.0.6...v1.0.7) (2022-06-15)
+
+
+### Bug Fixes
+
+* added missing dependency ([38ddac6](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/38ddac6217b90205b4dcdd1e29c178d752525556))
+
 ## [1.0.6](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.0.5...v1.0.6) (2022-06-13)
 
 
