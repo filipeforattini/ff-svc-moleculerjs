@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.1.4...v1.1.5) (2022-06-17)
+
+
+### Bug Fixes
+
+* forcing amd54 arch deployment ([d3d7376](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/d3d7376a39065f212955b0da58a7f3a3d84f7aa5))
+
 ## [1.1.4](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.1.3...v1.1.4) (2022-06-15)
 
 
