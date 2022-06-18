@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.1.5...v1.1.6) (2022-06-18)
+
+
+### Bug Fixes
+
+* using new node selector ([5102efd](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/5102efd1c97641b88d80f9207d22abb00e80ec66))
+
 ## [1.1.5](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.1.4...v1.1.5) (2022-06-17)
 
 
