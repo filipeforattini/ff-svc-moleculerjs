@@ -5,7 +5,8 @@ mysql:
   values:
     primary:
       nodeSelector:
-        "arch": "amd64"
+        - name: arch 
+          value: amd64
       persistence:
         size: 1Gi
         storageClass: "longhorn"
