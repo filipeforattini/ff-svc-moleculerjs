@@ -21,13 +21,9 @@ postgres:
 
 redis:
   enabled: true
-  values:
-    master:
 
 nats:
   enabled: true
-  values:
 
 etcd:
   enabled: true
-  values:
