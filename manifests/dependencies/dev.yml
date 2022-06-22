@@ -15,15 +15,31 @@ postgres:
   enabled: true
   values:
     primary:
+      nodeSelector:
+        - name: arch 
+          value: amd64
       persistence:
         size: 1Gi
         storageClass: "longhorn"
 
 redis:
   enabled: true
+  values:
+    master:
+      nodeSelector:
+        - name: arch 
+          value: amd64
 
 nats:
   enabled: true
+  values:
+    nodeSelector:
+      - name: arch 
+        value: amd64
 
 etcd:
   enabled: true
+  values:
+    nodeSelector:
+      - name: arch 
+        value: amd64
