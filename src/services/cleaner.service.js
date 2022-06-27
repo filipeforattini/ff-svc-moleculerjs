@@ -24,7 +24,6 @@ module.exports = {
   actions: {
     tick (ctx) {
       this.logger.info('cleaning')
-
       const date = dayjs().subtract(2, 'minute').format('YYYY-MM-DD HH:mm:ss')
 
       return Promise.all([

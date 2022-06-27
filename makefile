@@ -8,3 +8,6 @@ down:
 
 logs:
 	docker-compose logs --tail 100 -f app
+
+reports:
+	docker-compose logs --tail 100 -f app | grep "CONVERSION RATE"
