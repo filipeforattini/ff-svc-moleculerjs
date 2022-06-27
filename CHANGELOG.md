@@ -1,3 +1,10 @@
+## [1.1.9](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.1.8...v1.1.9) (2022-06-22)
+
+
+### Bug Fixes
+
+* added archtecture selector to dependencies ([379ee21](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/379ee212d6451260005187aac2b16a97b1017258))
+
 ## [1.1.8](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.1.7...v1.1.8) (2022-06-18)
 
 
