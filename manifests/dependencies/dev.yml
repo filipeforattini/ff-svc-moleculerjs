@@ -1,11 +1,11 @@
 #@data/values
 ---
 mysql:
-  enabled: true
+  enabled: false
   values:
     primary:
       nodeSelector:
-        - name: arch 
+        - name: ff/arch 
           value: amd64
       persistence:
         size: 1Gi
@@ -16,7 +16,7 @@ postgres:
   values:
     primary:
       nodeSelector:
-        - name: arch 
+        - name: ff/arch 
           value: amd64
       persistence:
         size: 1Gi
@@ -27,19 +27,19 @@ redis:
   values:
     master:
       nodeSelector:
-        - name: arch 
+        - name: ff/arch 
           value: amd64
 
 nats:
   enabled: true
   values:
     nodeSelector:
-      - name: arch 
+      - name: ff/arch 
         value: amd64
 
 etcd:
   enabled: true
   values:
     nodeSelector:
-      - name: arch 
+      - name: ff/arch 
         value: amd64
