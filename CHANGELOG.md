@@ -1,3 +1,10 @@
+## [1.1.10](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.1.9...v1.1.10) (2022-07-01)
+
+
+### Bug Fixes
+
+* wrong selector tags ([9a16edd](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/9a16eddecfa5ccabeda4d2e9a373432d4af93623))
+
 ## [1.1.9](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.1.8...v1.1.9) (2022-06-22)
 
 
