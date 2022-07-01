@@ -6,13 +6,14 @@ const model = require("../models/lead");
 
 const { 
   MYSQL_CONNECTION_STRING,
+  POSTGRES_CONNECTION_STRING,
 } = process.env;
 
 module.exports = {
   name: "leads",
   mixins: [DbService],
   model,
-  adapter: new SqlAdapter(MYSQL_CONNECTION_STRING),
+  adapter: new SqlAdapter(MYSQL_CONNECTION_STRING || POSTGRES_CONNECTION_STRING),
 
   channels: {
     async "leads.new" (payload) {
