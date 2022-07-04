@@ -1,3 +1,11 @@
+# [1.5.0](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.4.0...v1.5.0) (2022-07-04)
+
+
+### Features
+
+* using encrypted volumes ([8bb87c4](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/8bb87c489a48cfa1d5b4acdc6c03bf9c63a8e62b))
+* using encrypted volumes ([e0a2e28](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/e0a2e288b4317de7fcb198266f1749afa85d9541))
+
 # [1.4.0](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.3.0...v1.4.0) (2022-07-04)
 
 
