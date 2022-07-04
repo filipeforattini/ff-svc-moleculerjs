@@ -1,7 +1,7 @@
 #@data/values
 ---
 mysql:
-  enabled: false
+  enabled: true
   values:
     primary:
       nodeSelector:
@@ -9,7 +9,7 @@ mysql:
           value: amd64
       persistence:
         size: 1Gi
-        storageClass: longhorn-crypto-global
+        storageClass: longhorn-crypto
 
 postgres:
   enabled: true
@@ -20,7 +20,7 @@ postgres:
           value: amd64
       persistence:
         size: 1Gi
-        storageClass: longhorn-crypto-global
+        storageClass: longhorn-crypto
 
 redis:
   enabled: true
