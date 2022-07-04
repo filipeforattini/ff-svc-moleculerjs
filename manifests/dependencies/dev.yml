@@ -9,7 +9,7 @@ mysql:
           value: amd64
       persistence:
         size: 1Gi
-        storageClass: longhorn-crypto
+        storageClass: longhorn-crypto-global
 
 postgres:
   enabled: true
@@ -20,7 +20,7 @@ postgres:
           value: amd64
       persistence:
         size: 1Gi
-        storageClass: longhorn-crypto
+        storageClass: longhorn-crypto-global
 
 redis:
   enabled: true
