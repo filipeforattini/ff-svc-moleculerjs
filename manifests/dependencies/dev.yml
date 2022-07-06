@@ -1,15 +1,14 @@
 #@data/values
 ---
 mysql:
-  enabled: true
+  enabled: false
   values:
     primary:
       nodeSelector:
         - name: ff/arch 
           value: amd64
       persistence:
-        size: 1Gi
-        storageClass: longhorn-crypto
+        enabled: false
 
 postgres:
   enabled: true
@@ -19,8 +18,7 @@ postgres:
         - name: ff/arch 
           value: amd64
       persistence:
-        size: 1Gi
-        storageClass: longhorn-crypto
+        enabled: false
 
 redis:
   enabled: true
