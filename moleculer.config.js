@@ -17,9 +17,11 @@ module.exports = {
   hotReload: true,
   cacher: REDIS_CONNECTION_STRING || MOLECULER_CACHER,
   transporter: NATS_CONNECTION_STRING || MOLECULER_TRANSPORTER,
+  
   registry: {
     discoverer: ETCD_CONNECTION_STRING || MOLECULER_REGISTRY,
   },
+
   middlewares: [
     Middleware({ adapter: RABBITMQ_CONNECTION_STRING || REDIS_CONNECTION_STRING || MOLECULER_CHANNEL }),
   ],

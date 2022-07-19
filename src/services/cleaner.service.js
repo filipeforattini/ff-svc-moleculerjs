@@ -1,24 +1,13 @@
 const dayjs = require('dayjs')
-const { CronJob } = require('cron')
 
-const {
-  TZ = "America/Sao_Paulo",
-} = process.env
+const CronMixin = require('../mixins/cron.mixin')
 
 module.exports = {
   name: "cleaner",
+  mixins: [ CronMixin],
+
   settings: {
     interval: '0 * * * * *'
-  },
-
-  created () {
-    this.job = this.createJob()
-    this.logger.info('job created')
-  },
-
-  async started () {
-    this.job.start()
-    this.logger.info('job started')
   },
 
   actions: {
@@ -30,17 +19,6 @@ module.exports = {
         ctx.call("leads.removeOlderThan", { date }),
         ctx.call("pageviews.removeOlderThan", { date }),
       ])
-    },
-  },
-
-  methods: {
-    createJob () {
-      return new CronJob(this.settings.interval,
-        function () { this.actions.tick() }.bind(this),
-        null,
-        false,
-        TZ
-      )
     },
   },
 };

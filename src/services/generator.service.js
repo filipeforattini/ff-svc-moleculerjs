@@ -1,25 +1,13 @@
-const { CronJob } = require('cron')
 const Fakerator = require("fakerator")
 
-const {
-  TZ = "America/Sao_Paulo",
-} = process.env
+const CronMixin = require('../mixins/cron.mixin')
 
 module.exports = {
   name: "generator",
-  settings: {
-    interval: '* * * * * *'
-  },
+  mixins: [ CronMixin],
 
   created () {
-    this.job = this.createJob()
-    this.logger.info('job created')
     this.faker = Fakerator('pt-BR')
-  },
-
-  async started () {
-    this.job.start()
-    this.logger.info('job started')
   },
 
   actions: {
@@ -36,15 +24,6 @@ module.exports = {
   },
 
   methods: {
-    createJob () {
-      return new CronJob(this.settings.interval,
-        function () { this.actions.tick() }.bind(this),
-        null,
-        false,
-        TZ
-      )
-    },
-
     createLead () {
       return {
         name: this.faker.names.name(),

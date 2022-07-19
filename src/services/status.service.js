@@ -1,29 +1,11 @@
-const dayjs = require('dayjs')
-const { CronJob } = require('cron')
-
-const {
-  TZ = "America/Sao_Paulo",
-} = process.env
+const CronMixin = require('../mixins/cron.mixin')
 
 module.exports = {
   name: "status",
-  settings: {
-    interval: '* * * * * *'
-  },
-
-  created () {
-    this.job = this.createJob()
-    this.logger.info('job created')
-  },
-
-  async started () {
-    this.job.start()
-    this.logger.info('job started')
-  },
+  mixins: [ CronMixin],
 
   actions: {
-    async tick (ctx) {
-      
+    async tick (ctx) {      
       const [
         pageviews,
         leads, 
@@ -35,15 +17,4 @@ module.exports = {
       this.logger.info(` PAGEVIEWS ${pageviews}  -> LEADS ${leads}  (${((leads/pageviews)*100).toFixed(2)}% CONVERSION RATE)`)
     },
   },
-
-  methods: {
-    createJob () {
-      return new CronJob(this.settings.interval,
-        function () { this.actions.tick() }.bind(this),
-        null,
-        false,
-        TZ
-      )
-    },
-  },
-};
+}
