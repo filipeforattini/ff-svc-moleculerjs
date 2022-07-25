@@ -1,46 +1,60 @@
-const Fakerator = require("fakerator")
+const Fakerator = require("fakerator");
 
-const CronMixin = require('../mixins/cron.mixin')
+const CronMixin = require("../mixins/cron.mixin");
 
 module.exports = {
   name: "generator",
-  mixins: [ CronMixin],
+  mixins: [CronMixin],
+  dependencies: ["leads", "pageviews"],
 
-  created () {
-    this.faker = Fakerator('pt-BR')
+  settings: {
+    packageSize: 10,
+  },
+
+  created() {
+    this.faker = Fakerator("pt-BR");
   },
 
   actions: {
-    tick (ctx) {
-      const pageview = this.createPageview()
-      this.broker.sendToChannel("pageviews.new", pageview);
-      
-      if (this.faker.random.number(10) === 0) {
-        const lead = this.createLead()
-        lead.ip = pageview.ip
-        this.broker.sendToChannel("leads.new", lead);
+    tick() {
+      return Promise.all(
+        Array(this.settings.packageSize)
+          .fill(null)
+          .map(() => this.actions.package())
+      );
+    },
+
+    package(ctx) {
+      const pageview = this.randomPageview();
+      this.broker.sendToQueue("pageviews.new", pageview);
+
+      if (this.faker.random.number(9) === 0) {
+        const lead = this.randomLead();
+        lead.ip = pageview.ip;
+        this.broker.sendToQueue("leads.new", lead);
       }
     },
   },
 
   methods: {
-    createLead () {
-      return {
-        name: this.faker.names.name(),
-        mobile: this.faker.phone.number(),
-        country: 'Brazil',
-        city: this.faker.address.city(),
-        state: this.faker.address.state(),
-        address: this.faker.address.street(),
-      }
-    },
-
-    createPageview () {
+    randomPageview() {
       return {
         ip: this.faker.internet.ip(),
         page: this.faker.internet.url(),
         query: `?q=${this.faker.lorem.word()}`,
-      }
-    }
+      };
+    },
+
+    randomLead() {
+      return {
+        name: this.faker.names.name(),
+        mobile: this.faker.phone.number(),
+        email: this.faker.internet.email(),
+        country: "Brazil",
+        city: this.faker.address.city(),
+        state: this.faker.address.state(),
+        address: this.faker.address.street(),
+      };
+    },
   },
 };

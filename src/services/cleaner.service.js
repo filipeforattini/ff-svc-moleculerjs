@@ -13,7 +13,7 @@ module.exports = {
   actions: {
     tick (ctx) {
       this.logger.info('cleaning')
-      const date = dayjs().subtract(2, 'minute').format('YYYY-MM-DD HH:mm:ss')
+      const date = dayjs().subtract(10, 'minute').format('YYYY-MM-DD HH:mm:ss')
 
       return Promise.all([
         ctx.call("leads.removeOlderThan", { date }),

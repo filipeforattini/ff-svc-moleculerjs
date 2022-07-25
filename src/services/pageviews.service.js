@@ -1,37 +1,22 @@
-const Sequelize = require("sequelize");
-const DbService = require("moleculer-db");
-const SqlAdapter = require("moleculer-db-adapter-sequelize");
+const SequelizeAdapter = require("moleculer-db-adapter-sequelize");
 
-const model = require('../models/pageview')
+const model = require("../models/pageview");
+const DBService = require("../mixins/db-service.mixin");
 
-const {
-  MYSQL_CONNECTION_STRING,
-  POSTGRES_CONNECTION_STRING,
-} = process.env
+const { MYSQL_CONNECTION_STRING, POSTGRES_CONNECTION_STRING } = process.env;
 
 module.exports = {
   name: "pageviews",
-  mixins: [DbService],
+  mixins: [DBService],
   model,
-  adapter: new SqlAdapter(POSTGRES_CONNECTION_STRING || MYSQL_CONNECTION_STRING),
-  
-  channels: {
-    async "pageviews.new" (payload) {
-      this.actions.create(payload)
+
+  adapter: new SequelizeAdapter(
+    POSTGRES_CONNECTION_STRING || MYSQL_CONNECTION_STRING
+  ),
+
+  events: {
+    async "amqp://pageviews.new"(pageview) {
+      return this.actions.create(pageview);
     },
   },
-  
-  actions: {
-    removeOlderThan (ctx) {
-      const { date } = ctx.params
-
-      return this.adapter.model.destroy({
-        where: {
-          createdAt: {
-            [Sequelize.Op.lte]: date,
-          }
-        }
-      })
-    }
-  }
 };

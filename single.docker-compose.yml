@@ -16,6 +16,7 @@ services:
       - redis
       - mysql
       - postgresql
+      - rabbitmq
     expose:
       - 8080
     ports:
@@ -25,8 +26,8 @@ services:
       - TZ=America/Sao_Paulo
       - MOLECULER_CACHER=redis://redis:6379
       - MOLECULER_REGISTRY=etcd3://etcd:2379
-      - MOLECULER_CHANNEL=redis://redis:6379
       - MOLECULER_TRANSPORTER=nats://nats:4222
+      - RABBITMQ_CONNECTION_STRING=amqp://ff-svc-moleculerjs:secret@rabbitmq:5672
       - MYSQL_CONNECTION_STRING=mysql://ff-svc-moleculerjs:secret@mysql:3306/ff-svc-moleculerjs
       - POSTGRES_CONNECTION_STRING=postgresql://ff-svc-moleculerjs:secret@postgresql:5432/ff-svc-moleculerjs
 
@@ -90,8 +91,29 @@ services:
       - POSTGRESQL_DATABASE=ff-svc-moleculerjs
       - POSTGRESQL_PASSWORD=secret
 
+  rabbitmq:
+    image: bitnami/rabbitmq
+    volumes:
+      - ff_rabbitmq:/bitnami
+    expose:
+      - 5672
+      - 15672
+      - 25672
+    ports:
+      - 5672:5672
+      - 15672:15672
+      - 25672:25672
+    environment:
+      - TZ=America/Sao_Paulo
+      - RABBITMQ_FORCE_BOOT=yes
+      - RABBITMQ_PASSWORD=secret
+      - RABBITMQ_ERL_COOKIE=secret
+      - RABBITMQ_SECURE_PASSWORD=yes
+      - RABBITMQ_USERNAME=ff-svc-moleculerjs
+
 # volumes
 
 volumes:
   ff_mysql: {}
+  ff_rabbitmq: {}
   ff_postgresql: {}

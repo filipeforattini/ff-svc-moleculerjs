@@ -11,15 +11,7 @@ const pageviews = require("./services/pageviews.service");
 module.exports = (config) => {
   const broker = new ServiceBroker(config);
 
-  [
-    api, 
-    openapi, 
-    leads, 
-    status, 
-    cleaner, 
-    generator, 
-    pageviews,
-  ].map((svc) =>
+  [api, openapi, leads, status, cleaner, generator, pageviews].map((svc) =>
     broker.createService(svc)
   );
 

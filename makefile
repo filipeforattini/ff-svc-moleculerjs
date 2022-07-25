@@ -1,13 +1,37 @@
-all: up
+make: up
 
 up:
-	docker-compose up -d
+	docker-compose \
+		--project-name ff-cluster \
+		--file ./shared.docker-compose.yml \
+		--log-level ERROR \
+		up -d \
+		&& make logs
 
 down:
-	docker-compose down
+	docker-compose \
+		--project-name ff-cluster \
+		--file ./shared.docker-compose.yml \
+		--log-level ERROR \
+		down
 
 logs:
-	docker-compose logs --tail 100 -f app
+	docker-compose \
+		--project-name ff-cluster \
+		--file ./shared.docker-compose.yml \
+		--log-level ERROR \
+		logs --tail 100 -f app
 
-reports:
-	docker-compose logs --tail 100 -f app | grep "CONVERSION RATE"
+restart:
+	docker-compose \
+		--project-name ff-cluster \
+		--file ./shared.docker-compose.yml \
+		--log-level ERROR \
+		restart app \
+		&& make logs
+
+ps:
+	docker-compose \
+		--project-name ff-cluster \
+		--file ./shared.docker-compose.yml \
+		ps
