@@ -34,3 +34,4 @@ services:
       - RABBITMQ_CONNECTION_STRING=amqp://ff-cluster:secret@rabbitmq:5672
       - MYSQL_CONNECTION_STRING=mysql://ff-cluster:secret@mysql:3306/ff-cluster
       - POSTGRES_CONNECTION_STRING=postgresql://ff-cluster:secret@postgresql:5432/ff-cluster
+      - GENERATOR_SIZE=100

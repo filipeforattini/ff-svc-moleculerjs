@@ -54,7 +54,7 @@ module.exports = {
         email: this.faker.internet.email(),
         country: "Brazil",
         city: this.faker.address.city(),
-        state: this.faker.address.state(),
+        state: this.faker.address.countryCode(),
         address: this.faker.address.street(),
       };
     },

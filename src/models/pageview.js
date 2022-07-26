@@ -17,7 +17,7 @@ module.exports = {
       allowNull: false,
     },
     query: {
-      type: DataTypes.STRING(32),
+      type: DataTypes.STRING(256),
       allowNull: false,
     },
   },

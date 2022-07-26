@@ -21,11 +21,11 @@ module.exports = {
       allowNull: false,
     },
     mobile: {
-      type: DataTypes.STRING(64),
+      type: DataTypes.STRING(32),
       allowNull: false,
     },
     country: {
-      type: DataTypes.STRING(32),
+      type: DataTypes.STRING(64),
       allowNull: false,
     },
     state: {
