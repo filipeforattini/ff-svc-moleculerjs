@@ -1,4 +1,4 @@
-const Sequelize = require("sequelize");
+const { DataTypes } = require("sequelize");
 
 module.exports = {
   name: "pageviews",
@@ -8,8 +8,17 @@ module.exports = {
   },
 
   define: {
-    ip: Sequelize.STRING,
-    page: Sequelize.STRING,
-    query: Sequelize.STRING,
+    ip: {
+      type: DataTypes.STRING(32),
+      allowNull: false,
+    },
+    page: {
+      type: DataTypes.STRING(64),
+      allowNull: false,
+    },
+    query: {
+      type: DataTypes.STRING(32),
+      allowNull: false,
+    },
   },
 };

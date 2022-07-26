@@ -1,4 +1,4 @@
-const Sequelize = require("sequelize");
+const { DataTypes } = require("sequelize");
 
 module.exports = {
   name: "leads",
@@ -8,13 +8,37 @@ module.exports = {
   },
 
   define: {
-    ip: Sequelize.STRING,
-    name: Sequelize.STRING,
-    email: Sequelize.STRING,
-    mobile: Sequelize.STRING,
-    country: Sequelize.STRING,
-    state: Sequelize.STRING,
-    city: Sequelize.STRING,
-    address: Sequelize.STRING,
+    ip: {
+      type: DataTypes.STRING(32),
+      allowNull: false,
+    },
+    name: {
+      type: DataTypes.STRING(64),
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING(64),
+      allowNull: false,
+    },
+    mobile: {
+      type: DataTypes.STRING(64),
+      allowNull: false,
+    },
+    country: {
+      type: DataTypes.STRING(32),
+      allowNull: false,
+    },
+    state: {
+      type: DataTypes.STRING(32),
+      allowNull: false,
+    },
+    city: {
+      type: DataTypes.STRING(64),
+      allowNull: false,
+    },
+    address: {
+      type: DataTypes.STRING(256),
+      allowNull: false,
+    },
   },
 };

@@ -20,35 +20,35 @@ const decoupleNames = (eventName) => {
   };
 };
 
-const addConnectionEvents = (connection) => {
+const addConnectionEvents = (connection, logger) => {
   connection
     .on("error", (err) => {
-      this.logger.error("AMQP connection error.", err);
+      logger.error("AMQP connection error.", err);
     })
     .on("close", (err) => {
-      this.logger.error("AMQP connection is closed.", err);
+      logger.error("AMQP connection is closed.", err);
     })
     .on("blocked", (reason) => {
-      this.logger.warn("AMQP connection is blocked.", reason);
+      logger.warn("AMQP connection is blocked.", reason);
     })
     .on("unblocked", () => {
-      this.logger.info("AMQP connection is unblocked.");
+      logger.info("AMQP connection is unblocked.");
     });
 };
 
-const addChannelEvents = (channel) => {
+const addChannelEvents = (channel, logger) => {
   channel
     .on("close", () => {
-      this.logger.error("AMQP channel closed.");
+      logger.error("AMQP channel closed.");
     })
     .on("error", (err) => {
-      this.logger.error("AMQP channel error", err);
+      logger.error("AMQP channel error", err);
     })
     .on("drain", () => {
-      this.logger.info("AMQP channel is drained.");
+      logger.info("AMQP channel is drained.");
     })
     .on("return", (msg) => {
-      this.logger.warn("AMQP channel returned a message.", msg);
+      logger.warn("AMQP channel returned a message.", msg);
     });
 };
 
@@ -63,20 +63,20 @@ module.exports = (options = {}) => {
       this.logger.info("Connecting to AMQP server...");
       broker.amqpConnection = await amqplib.connect(uri);
 
-      addConnectionEvents(broker.amqpConnection);
+      addConnectionEvents(broker.amqpConnection, this.logger);
       this.logger.info("AMQP is connected.");
 
       this.logger.debug(`Creating AMQP channel...`);
       broker.amqpChannel = await broker.amqpConnection.createChannel();
 
-      addChannelEvents(broker.amqpChannel)
+      addChannelEvents(broker.amqpChannel, this.logger)
       broker.amqpChannel.prefetch(prefetch);
 
       broker.sendToQueue = (queue, content) => {
         const { exchange, routingKey } = decoupleNames(queue);
         content = Buffer.from(JSON.stringify(content), "utf-8");
 
-        myBroker.amqpChannel.assertExchange(exchange, "fanout");
+        myBroker.amqpChannel.assertExchange(exchange, "fanout", { durable: true });
         myBroker.amqpChannel.publish(exchange, routingKey, content);
       };
     },
@@ -101,7 +101,7 @@ module.exports = (options = {}) => {
       amqpEvents.forEach(async (event) => {
         const { exchange, routingKey, queue } = decoupleNames(event);
 
-        await myBroker.amqpChannel.assertQueue(queue, { autoDelete: true });
+        await myBroker.amqpChannel.assertQueue(queue, { autoDelete: true, durable: false });
         await myBroker.amqpChannel.bindQueue(queue, exchange, routingKey);
 
         if (autoAck) {

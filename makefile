@@ -20,15 +20,15 @@ logs:
 		--project-name ff-cluster \
 		--file ./shared.docker-compose.yml \
 		--log-level ERROR \
-		logs --tail 100 -f app
+		logs --tail 100 -f app-moleculer
 
 restart:
 	docker-compose \
 		--project-name ff-cluster \
 		--file ./shared.docker-compose.yml \
 		--log-level ERROR \
-		restart app \
-		&& make logs
+		restart app-moleculer \
+	&& make logs
 
 ps:
 	docker-compose \

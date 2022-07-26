@@ -2,13 +2,15 @@ const Fakerator = require("fakerator");
 
 const CronMixin = require("../mixins/cron.mixin");
 
+const { GENERATOR_SIZE = "10" } = process.env;
+
 module.exports = {
   name: "generator",
   mixins: [CronMixin],
   dependencies: ["leads", "pageviews"],
 
   settings: {
-    packageSize: 10,
+    packageSize: parseInt(GENERATOR_SIZE),
   },
 
   created() {
@@ -28,7 +30,7 @@ module.exports = {
       const pageview = this.randomPageview();
       this.broker.sendToQueue("pageviews.new", pageview);
 
-      if (this.faker.random.number(9) === 0) {
+      if (this.faker.random.number(100) <= 5) {
         const lead = this.randomLead();
         lead.ip = pageview.ip;
         this.broker.sendToQueue("leads.new", lead);
