@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js --trace-warnings",
     "commit": "git pull && git commit --allow-empty -am \"fix: empty commit for testing\" && git push",
-    "commit-with-pipe": "cd ../ff-iac-github-actions; npm run commit && cd ../ff-app-moleculerjs; npm run commit",
+    "commit-with-pipe": "cd ../ff-iac-github-actions; npm run commit && cd ../ff-svc-moleculerjs; npm run commit",
     "local": "MOLECULER_CACHER=redis://localhost:6379 MOLECULER_REGISTRY=etcd3://localhost:2379 MOLECULER_CHANNEL=redis://localhost:6379 MOLECULER_TRANSPORTER=nats://localhost:4222 MYSQL_CONNECTION_STRING=mysql://ff-svc-moleculerjs:secret@localhost:3306/ff-svc-moleculerjs POSTGRES_CONNECTION_STRING=postgresql://ff-svc-moleculerjs:secret@localhost:5432/ff-svc-moleculerjs node index.js --trace-warnings"
   },
   "repository": {
