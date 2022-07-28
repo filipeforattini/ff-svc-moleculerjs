@@ -1,6 +1,6 @@
 {
   "name": "ff-svc-moleculerjs",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "",
   "main": "index.js",
   "scripts": {
