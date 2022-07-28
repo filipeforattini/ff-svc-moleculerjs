@@ -1,3 +1,24 @@
+# [1.6.0](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.5.1...v1.6.0) (2022-07-28)
+
+
+### Bug Fixes
+
+* empty commit for testing ([eca9206](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/eca92065102d8774cb2e328798c09d15ac024065))
+* empty commit for testing ([5f53572](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/5f53572521d7c2f03424746f9d89ef88be99f105))
+* empty commit for testing ([5866b14](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/5866b14d23a8ffdf7fd70df46b529f7f3b3e991e))
+* empty commit for testing ([db27f44](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/db27f44198bdab643abc65ba7b970db3ba55733f))
+* empty commit for testing ([e288492](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/e288492098260c001ec732c91d9867ec0b5c5b30))
+* empty commit for testing ([3050ed7](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/3050ed7ac85429d6c259d6737d34ee2c853b3637))
+* empty commit for testing ([31198a8](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/31198a87b5bd9608eda0f3822c17a0f94e15c044))
+* queue config and database equalisation ([8010590](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/801059076ab49fa62bfab7d1405b4b2a516026af))
+* queues consumers and database equalisation ([f42c4fc](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/f42c4fc56103797205ad5a374f4ae74927d0e624))
+
+
+### Features
+
+* added swagger and api service ([8364f29](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/8364f295e23069bd226571b6df437c774641e5f8))
+* new rabbitmq mixin for connection management ([0a46c45](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/0a46c45bce90e0de5fee71fc62679a0434952fb3))
+
 ## [1.5.1](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.5.0...v1.5.1) (2022-07-07)
 
 
