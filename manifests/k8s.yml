@@ -1,0 +1,19 @@
+#@data/values
+---
+port: 8080
+
+env:
+  - name: PORT
+    value: "8080"
+  - name: TZ
+    value: America/Sao_Paulo
+
+ingress:
+  enable: true
+  type: traefik
+
+  tls:
+    enable: true
+    domain: forattini.app
+    letsencrypt:
+      enable: true

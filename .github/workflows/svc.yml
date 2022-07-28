@@ -1,0 +1,22 @@
+name: pipeline
+
+on: 
+  push:
+  deployment:
+  release:
+    types: [created]
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+
+  SVC:
+    uses: filipeforattini/ff-iac-github-actions/.github/workflows/svc.yml@main
+    secrets: inherit
+    with:
+      mainBranch: main
+      platforms: linux/amd64,linux/arm64
+      staticAnalysis: false
+      containerRegistry: ghcr.io
+      nodeMatrix: '[14, 17]'
+      environmentsAsNamespaces: true
