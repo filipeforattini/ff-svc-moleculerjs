@@ -41,3 +41,12 @@ etcd:
     nodeSelector:
       - name: ff/arch 
         value: amd64
+
+rabbitmq:
+  enabled: true
+  values:
+    nodeSelector:
+      - name: ff/arch 
+        value: amd64
+    persistence:
+      enabled: false
