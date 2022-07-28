@@ -1,3 +1,12 @@
+## [1.6.1](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.6.0...v1.6.1) (2022-07-28)
+
+
+### Bug Fixes
+
+* empty commit for testing ([46a7cdc](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/46a7cdccdeb38992e7077b1e4e0b0f67d0487272))
+* empty commit for testing ([3550f5f](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/3550f5f2f66f9a35d008738da1c185beafb6cb87))
+* empty commit for testing ([292fac2](https://github.com/filipeforattini/ff-svc-moleculerjs/commit/292fac2a2a8c8e1a1ee466c20dafd27242ab3e52))
+
 # [1.6.0](https://github.com/filipeforattini/ff-svc-moleculerjs/compare/v1.5.1...v1.6.0) (2022-07-28)
 
 
