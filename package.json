@@ -1,24 +1,24 @@
 {
-  "name": "ff-svc-moleculerjs",
+  "name": "ff-svc-moleculer",
   "version": "1.6.9",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js --trace-warnings",
     "commit": "git pull && git commit --allow-empty -am \"fix: empty commit for testing\" && git push",
-    "commit-with-pipe": "cd ../ff-iac-github-actions; npm run commit && cd ../ff-svc-moleculerjs; npm run commit",
-    "local": "MOLECULER_CACHER=redis://localhost:6379 MOLECULER_REGISTRY=etcd3://localhost:2379 MOLECULER_CHANNEL=redis://localhost:6379 MOLECULER_TRANSPORTER=nats://localhost:4222 MYSQL_CONNECTION_STRING=mysql://ff-svc-moleculerjs:secret@localhost:3306/ff-svc-moleculerjs POSTGRES_CONNECTION_STRING=postgresql://ff-svc-moleculerjs:secret@localhost:5432/ff-svc-moleculerjs node index.js --trace-warnings"
+    "commit-with-pipe": "cd ../ff-iac-github-actions; npm run commit && cd ../ff-svc-moleculer; npm run commit",
+    "local": "MOLECULER_CACHER=redis://localhost:6379 MOLECULER_REGISTRY=etcd3://localhost:2379 MOLECULER_CHANNEL=redis://localhost:6379 MOLECULER_TRANSPORTER=nats://localhost:4222 MYSQL_CONNECTION_STRING=mysql://ff-svc-moleculer:secret@localhost:3306/ff-svc-moleculer POSTGRES_CONNECTION_STRING=postgresql://ff-svc-moleculer:secret@localhost:5432/ff-svc-moleculer node index.js --trace-warnings"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/filipeforattini/ff-svc-moleculerjs.git"
+    "url": "git+https://github.com/filipeforattini/ff-svc-moleculer.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/filipeforattini/ff-svc-moleculerjs/issues"
+    "url": "https://github.com/filipeforattini/ff-svc-moleculer/issues"
   },
-  "homepage": "https://github.com/filipeforattini/ff-svc-moleculerjs#readme",
+  "homepage": "https://github.com/filipeforattini/ff-svc-moleculer#readme",
   "dependencies": {
     "@moleculer/channels": "^0.1.2",
     "amqplib": "^0.10.0",
